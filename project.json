@@ -1,0 +1,19 @@
+{
+  "project_type": "javascript",
+  "debugMode": 1,
+  "showFPS": true,
+  "frameRate": 60,
+  "id": "gameCanvas",
+  "renderMode": 0,
+  "engineDir": "frameworks/cocos2d-html5",
+  "modules": [
+    "cocos2d","extensions","chipmunk"
+  ],
+  "jsList": [
+    "src/resource.js",
+    "src/GameScene.js",
+    "src/FlappyBird.js",
+    "src/GameConfig.js",
+    "src/Obstacle.js"
+  ]
+}
