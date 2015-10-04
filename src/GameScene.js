@@ -163,12 +163,9 @@ var GameView = cc.Layer.extend({
     onTouchEnded: function (touch, event) {
     },
     doForceBox: function () {
-//        return;
         if (this.flappyBird) {
             var speed = 500;
-            //this.flappyBird.getBody().setVel(cp.v(0,0));
             this.flappyBird.getBody().applyImpulse(cp.v(0, speed), cp.v(0, 0));
-            //this.flappyBird.getBody().applyForce(cp.v(0, 200), cp.v(0,0));
         }
     },
     resetObstacle: function (dt) {

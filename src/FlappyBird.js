@@ -22,7 +22,7 @@ var FlappyBird = cc.PhysicsSprite.extend({
     },
     initPhysical: function (space) {
         var winSize = cc.director.getWinSize();
-        var body = new cp.Body(1, cp.momentForBox(5, this.width, this.height));
+        var body = new cp.Body(1, cp.momentForBox(1, this.width, this.height));
         body.setPos(cp.v(winSize.width / 2, winSize.height / 2));
         space.addBody(body);
         var shape = new cp.BoxShape(body, this.width, this.height);
