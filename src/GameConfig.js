@@ -3,6 +3,7 @@ var MW = MW || {};
 
 MW.FLAPPY_BIRD_TAG = 101;
 MW.OBSTACLE_TAG = 102;
+MW.WALL_TAG = 103;
 
 
 //声音标志位

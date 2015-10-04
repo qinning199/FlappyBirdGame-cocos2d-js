@@ -1,13 +1,3 @@
-/*var res = {
-		Bird_BG:"res/bird_bg.png",
-		Bird_GameOver:"res/bird_gameover.png",
-		Bird_Logo:"res/bird_logo.png"
-};
-
-var g_resources = [];
-for (var i in res) {
-    g_resources.push(res[i]);
-}*/
 var g_resources = [
      "res/bird_bg.png",
      "res/bird_gameover.png",
