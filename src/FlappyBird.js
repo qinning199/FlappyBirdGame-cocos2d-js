@@ -20,44 +20,51 @@ var FlappyBird = cc.PhysicsSprite.extend({
         this._fast = false;
         this._animation.retain();
     },
+
     initPhysical: function (space) {
-        var winSize = cc.director.getWinSize();
         var body = new cp.Body(1, cp.momentForBox(1, this.width, this.height));
-        body.setPos(cp.v(winSize.width / 2, winSize.height / 2));
-        space.addBody(body);
-        var shape = new cp.BoxShape(body, this.width, this.height);
+        //space.addBody(body);
+        /*
+        //var shape = new cp.BoxShape(body, this.width, this.height);
+        var verts = [0, 0, 0, 2, 1, 2, 2, 1, 2, 0];
+
+        for (var i = 0; i < verts.length; ++i) {
+            verts[i] = verts[i] * this.width / 2 - this.width / 2;
+        }
+        var shape = new cp.PolyShape(body, verts, cp.vzero);
         shape.setElasticity(0.0);
-        shape.setFriction(0.0);
+        shape.setFriction(1);
         space.addShape(shape);
+        */
+        var verts = [-1, -1, -1, 0, 1, 0, 1, -1];
+        var i;
+        for (i = 0; i < verts.length; ++i) {
+            verts[i] = verts[i] * this.width / 2;
+        }
+        var shape = new cp.PolyShape(body, verts, cp.vzero);
+        shape.setElasticity(0.0);
+        shape.setFriction(1);
+        space.addShape(shape);
+
+        shape.setCollisionType(MW.FLAPPY_BIRD_TAG);
+
+        verts = [-1, 0, -1, 1, 0, 1, 0, 0];
+        for (i = 0; i < verts.length; ++i) {
+            verts[i] = verts[i] * this.width / 2;
+        }
+        shape = new cp.PolyShape(body, verts, cp.vzero);
+        shape.setElasticity(0.0);
+        shape.setFriction(1);
+        space.addShape(shape);
+
         shape.setCollisionType(MW.FLAPPY_BIRD_TAG);
         this.setBody(body);
-    },
-    toggleSpeed: function (fast) {
-        if (fast == this._fast)
-            return;
-        this._fast = fast;
-
-        this.stopAllActions();
-        if (!fast)
-            this._animation.setDelayPerUnit(1 / 20);
-        else
-            this._animation.setDelayPerUnit(1 / 60);
-        var action = cc.animate(this._animation).repeatForever();
-        this.runAction(action);
-    },
-    setCenter: function () {
-        var winSize = cc.director.getWinSize();
-        this.getBody().setPos(cp.v(winSize.width / 2, winSize.height / 2));
-    },
-    reset: function () {
-
     },
 
     onExit: function () {
         this._super();
         this._animation.release();
     }
-
 });
 
 

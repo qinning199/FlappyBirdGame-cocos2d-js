@@ -15,6 +15,7 @@ var Obstacle = cc.PhysicsSprite.extend({
         shape.setCollisionType(MW.OBSTACLE_TAG);
         this.setBody(body);
     },
+
     move: function () {
         var winSize = cc.director.getWinSize();
         var actionBy = cc.moveBy(2.5, cc.p(-winSize.width - this.width * 2, 0));

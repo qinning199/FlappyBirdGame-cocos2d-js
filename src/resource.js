@@ -8,5 +8,6 @@ var g_resources = [
      "res/btn_start_normal.png",
      "res/btn_start_pressed.png",
      "res/obstacle_down.png",
-     "res/obstacle_up.png"
+     "res/obstacle_up.png",
+    "res/config/poly_shape.json"
 ];

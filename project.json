@@ -14,6 +14,12 @@
     "src/GameScene.js",
     "src/FlappyBird.js",
     "src/GameConfig.js",
-    "src/Obstacle.js"
+    "src/Obstacle.js",
+    "src/common/util/Utils.js",
+    "src/entity/BaseShape.js",
+    "src/enum/ShapeType.js",
+    "src/config/ShapeConfig.js",
+    "src/config/ShapeConfigMan.js",
+    "src/model/ShapeMan.js"
   ]
 }
